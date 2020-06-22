@@ -1,0 +1,13 @@
+.xprojects_detail span.navitem {
+  display: inline-block;
+}
+
+.xprojects_detail span.back{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.xprojects_detail .ce_gallery > ul li.col_first {
+  float: left;
+  clear: none;
+}

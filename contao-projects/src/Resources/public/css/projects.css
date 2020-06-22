@@ -1,0 +1,61 @@
+.ce_xprojects_overview .item {
+  width: 50%;
+  float: left;
+}
+
+.ce_xprojects_overview .item_inside {
+  padding-right: 5px;
+  padding-left: 5px;
+  margin-bottom: 10px;
+}
+
+.ce_xprojects_overview_clear {
+  clear: both;
+}
+
+.ce_xprojects_overview .item .textcontainer {
+  background-color: rgba(255,255,255, 0.8);
+  width: 100%;
+  overflow: hidden;
+}
+
+.ce_xprojects_overview .item .textcontainer .textcontainer_inside {
+  padding: 15px;
+}
+
+.ce_xprojects_overview .item img {
+  width: 100%;
+}
+
+.ce_xprojects_overview .tagcloud {
+  float: right;
+  max-width: 325px;
+}
+
+.ce_xprojects_overview .tagcloud ul {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.ce_xprojects_overview .tagcloud ul li {
+  list-style-type: none;
+  display: inline;
+}
+
+.ce_xprojects_overview .tagcloud ul li span {
+  display: inline-block;
+  font-size:25px;
+  color:#ccc;
+  cursor: pointer;
+  padding:5px;
+}
+
+.ce_xprojects_overview .tagcloud ul li span.tagall {
+  display: block;
+}
+
+.ce_xprojects_overview .tagcloud ul li span:hover,
+.ce_xprojects_overview .tagcloud ul li span.active {
+  color:#000;
+}

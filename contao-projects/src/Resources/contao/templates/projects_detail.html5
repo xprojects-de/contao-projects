@@ -1,0 +1,23 @@
+
+<div class="xprojects_detail <?= $this->class; ?> block"<?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>  
+  <?php foreach ($this->data as $contentid): ?>
+    <div class="projectcontainer_contentitem">{{insert_content::<?= $contentid ?>}}</div>
+  <?php endforeach; ?>
+  <div id="projectnav">
+    <?php if ($this->prev != null): ?>
+      <span class="navitem prev">
+        <a href="<?= $this->prev ?>"><?= $GLOBALS['TL_LANG']['projects_projects']['nav_prev'] ?></a>
+      </span>    
+    <?php endif; ?>  
+    <?php if ($this->back != null): ?>
+      <span class="navitem back">
+        <a href="<?= $this->back ?>"><?= $GLOBALS['TL_LANG']['projects_projects']['nav_back'] ?></a>
+      </span>
+    <?php endif; ?>  
+    <?php if ($this->next != null): ?>
+      <span class="navitem next">     
+        <a href="<?= $this->next ?>"><?= $GLOBALS['TL_LANG']['projects_projects']['nav_next'] ?></a>
+      </span>
+    <?php endif; ?>
+  </div>
+</div>

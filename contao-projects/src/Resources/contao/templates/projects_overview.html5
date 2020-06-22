@@ -1,0 +1,47 @@
+<div class="ce_xprojects_overview <?= $this->class ?> block"<?= $this->cssID ?>>
+  <?php if ($this->text != ''): ?>
+    <div class="text">
+      <?= $this->text ?>
+    </div>
+  <?php endif; ?>
+  <?php if (count($this->tags) > 0): ?>
+    <div class="tagcloud">
+      <ul>
+        <li><span class="tagselector tagall" data-tag="-"><?= $GLOBALS['TL_LANG']['projects_projects']['tag_all'] ?></span></li>
+        <?php foreach ($this->tags as $tag): ?>
+          <li><span class="tagselector" data-tag="<?= $tag ?>"><?= $tag ?></span></li>
+        <?php endforeach ?>
+      </ul>
+    </div>
+  <?php endif; ?>
+  <div class="ce_xprojects_overview_clear"></div>
+  <?php $lCounter = 0; ?>
+  <?php foreach ($this->data as $project): ?>
+    <div data-tags="<?= $project['tags'] ?>" class="item" <?php if ($project['link'] != ''): ?> style="cursor:pointer;" onclick="location.href = '<?= $project['link'] ?>';" <?php endif; ?>>
+      <div class="item_inside c<?= ($lCounter % 2) ?>" style="position:relative;">
+        <div class="imagecontainer">
+          <?php if ($project['image']): ?>
+            <?php if ($lCounter > 2): ?>
+              <img class="lazy" data-src="<?= $project['image'] ?>" src="" alt="">
+            <?php else: ?>
+              <img src="<?= $project['image'] ?>" src="" alt="">
+            <?php endif; ?>
+          <?php endif ?>
+        </div>
+        <?php if ($project['title'] != ""): ?>
+          <div data-id="textcontainer_<?= $this->id ?>_<?= $lCounter ?>" class="textcontainer" style="position:absolute;top:0;left:0;">
+            <div class="textcontainer_inside">
+              <h3><?= $project['title'] ?></h3>
+              <p><?= $project['teaser'] ?></p>
+              <?php if ($project['link'] != ''): ?>
+                <a href="<?= $project['link'] ?>">mehr</a>
+              <?php endif; ?>
+            </div>
+          </div>
+        <?php endif; ?>
+      </div>
+    </div>
+    <?php $lCounter++; ?>
+  <?php endforeach ?>
+  <div class="ce_xprojects_overview_clear"></div>
+</div>

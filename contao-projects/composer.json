@@ -1,0 +1,32 @@
+{
+  "name": "xprojects/contao-projects",
+  "description": "Projectsmodul for Contao",
+  "keywords": ["contao", "projects"],
+  "type": "contao-bundle",
+  "version": "0.11",
+  "license": "LGPL-3.0-or-later",
+  "require": {
+    "php": ">=5.6",
+    "contao/core-bundle": "^4.8"
+  },
+  "authors": [
+    {
+      "name": "XProjects",
+      "homepage": "https://x-projects.de",
+      "email": "infos@x-projects.de",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "XProjects\\Projects\\": "src/"
+    }
+  },
+  "extra": {
+    "contao-manager-plugin": "XProjects\\Projects\\ContaoManager\\Plugin",
+    "contao-component-dir": "public"
+  },
+  "config": {
+    "contao-component-dir": "public"
+  }
+}
