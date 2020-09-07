@@ -20,11 +20,19 @@ class ProjectsDetail extends \ContentElement {
     global $objPage;
     $assetsDir = 'bundles/projects';
     $GLOBALS['TL_CSS'][] = $assetsDir . '/css/projectsdetail.css|static';
+
+    $projectObj = null;
     $alias = \Input::get($GLOBALS['TL_CONFIG']['xprojects_getparam']);
-    $projectObj = \Database::getInstance()->prepare("SELECT * FROM tl_xprojects WHERE published=? AND alias=?")->execute(1, $alias);
+    $byID = \Input::get('p');
+    if ($alias != null && $alias != '') {
+      $projectObj = \Database::getInstance()->prepare("SELECT * FROM tl_xprojects WHERE published=? AND alias=?")->execute(1, $alias);
+    } else if ($byID != null && $byID != '') {
+      $projectObj = \Database::getInstance()->prepare("SELECT * FROM tl_xprojects WHERE published=? AND id=?")->execute(1, intval($byID));
+    }
+
     $data = array();
     $projectId = 0;
-    if ($projectObj->numRows > 0) {
+    if ($projectObj != null && $projectObj->numRows > 0) {
       while ($projectObj->next()) {
         if ($projectObj->seo_titel != "") {
           $objPage->title = $projectObj->seo_titel;
