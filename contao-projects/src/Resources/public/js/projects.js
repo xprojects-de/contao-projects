@@ -61,6 +61,10 @@
       }
     });
     var pTagCookie = getCookie('contao-projecttag');
+    var tagURL = document.location.href;
+    if (tagURL.indexOf('#') !== -1) {
+      pTagCookie = tagURL.substring(tagURL.indexOf('#') + 1);
+    }
     if (pTagCookie !== '' && pTagCookie !== '-') {
       $(".ce_xprojects_overview .item").each(function () {
         var tagsItems = $(this).attr('data-tags');
@@ -86,6 +90,16 @@
         current.addClass('active');
         var tag = current.attr('data-tag');
         setCookie('contao-projecttag', tag, 1);
+        var url = document.location.href;
+        if (url.indexOf('#') !== -1) {
+          url = url.substring(0, url.indexOf('#'));
+        }
+        if (tag !== '-') {
+          document.location = url + "#" + tag;
+        } else {
+          document.location = url;
+        }
+
         $(".ce_xprojects_overview .item").each(function () {
           var tagsItems = $(this).attr('data-tags');
           if (tagsItems.includes(tag) || tag === '-') {
@@ -98,7 +112,7 @@
     });
     $('.ce_xprojects_overview .lazy').lazy({
       effect: "fadeIn",
-      effectTime: 800,
+      effectTime: 500,
       threshold: 0
     });
     resizeElement('.projectcontainer_contentitem li .image_container');

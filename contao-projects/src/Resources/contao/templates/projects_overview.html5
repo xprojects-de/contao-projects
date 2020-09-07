@@ -17,7 +17,7 @@
   <div class="ce_xprojects_overview_clear"></div>
   <?php $lCounter = 0; ?>
   <?php foreach ($this->data as $project): ?>
-    <div data-tags="<?= $project['tags'] ?>" class="item" <?php if ($project['link'] != ''): ?> style="cursor:pointer;" onclick="location.href = '<?= $project['link'] ?>';" <?php endif; ?>>
+    <div data-tags="<?= $project['tags'] ?>" class="item">
       <div class="item_inside c<?= ($lCounter % 2) ?>" style="position:relative;">
         <div class="imagecontainer">
           <?php if ($project['image']): ?>
