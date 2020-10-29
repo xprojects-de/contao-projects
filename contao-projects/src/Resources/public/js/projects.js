@@ -63,7 +63,10 @@
     var pTagCookie = getCookie('contao-projecttag');
     var tagURL = document.location.href;
     if (tagURL.indexOf('#') !== -1) {
-      pTagCookie = tagURL.substring(tagURL.indexOf('#') + 1);
+      var tagFromURL = tagURL.substring(tagURL.indexOf('#') + 1);
+      if (tagFromURL.startsWith("p_")) {
+        pTagCookie = tagFromURL.substring(2, tagFromURL.length);
+      }
     }
     if (pTagCookie !== '' && pTagCookie !== '-') {
       $(".ce_xprojects_overview .item").each(function () {
@@ -95,7 +98,7 @@
           url = url.substring(0, url.indexOf('#'));
         }
         if (tag !== '-') {
-          document.location = url + "#" + tag;
+          document.location = url + "#p_" + tag;
         } else {
           document.location = url;
         }
