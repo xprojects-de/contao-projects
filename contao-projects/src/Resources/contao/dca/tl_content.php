@@ -24,8 +24,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['xprojectsdetail'] = array
     'inputType' => 'pageTree',
     'foreignKey' => 'tl_page.title',
     'eval' => array('fieldType' => 'radio', 'tl_class' => 'clr', 'mandatory' => true),
-    'sql' => "int(10) unsigned NOT NULL default '0'",
-    'relation' => array('type' => 'hasOne', 'load' => 'eager')
+    'sql' => "int(10) unsigned NOT NULL default '0'"
 );
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['xprojectsoverview'] = array
@@ -35,8 +34,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['xprojectsoverview'] = array
     'inputType' => 'pageTree',
     'foreignKey' => 'tl_page.title',
     'eval' => array('fieldType' => 'radio', 'tl_class' => 'clr', 'mandatory' => true),
-    'sql' => "int(10) unsigned NOT NULL default '0'",
-    'relation' => array('type' => 'hasOne', 'load' => 'eager')
+    'sql' => "int(10) unsigned NOT NULL default '0'"
 );
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['xprojectsshowtags'] = array
