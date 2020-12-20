@@ -17,7 +17,7 @@ class ProjectsAlpdeskFrontendViewListener {
       $event->getItem()->setPath('do=xprojects');
       $event->getItem()->setLabel($GLOBALS['TL_LANG']['projects_label']);
     } else if ($event->getElement()->type === 'xprojects_detail') {
-      $alias = Input::get('projekte');
+      $alias = Input::get($GLOBALS['TL_CONFIG']['xprojects_getparam']);
       if ($alias !== null && $alias !== '') {
         // Better use Model but Extention does not have a model
         $projectObj = Database::getInstance()->prepare("SELECT id FROM tl_xprojects WHERE alias=?")->execute($alias);
