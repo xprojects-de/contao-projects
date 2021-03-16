@@ -1,1 +1,4 @@
 /nbproject/private/
+/contao-projects/vendor/
+/contao-projects/composer.lock
+/contao-projects/public/
